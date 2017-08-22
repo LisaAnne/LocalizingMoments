@@ -14,6 +14,8 @@ Hendricks, Lisa Anne, et al. "Localizing Moments in Video with Natural Language.
 }
 ```
 
+License: BSD 2-Clause license
+
 ## Running the Code
 
 To start, please run "./setup.sh". 
