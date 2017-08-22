@@ -25,19 +25,19 @@ I will release code to replicate my models shortly.  For now please see "eval.py
 
 ### Annotations
 
-To access the dataset, please look at the json files in the "data" folder.  The json files contain a list of data points which are stored as dict structures with the following fields:
+To access the dataset, please look at the json files in the "data" folder.  Our annotations include descriptions which are temporally grounded in videos.  For easier annotation, each video is split into 5-second temporal chunks.  The first temporal chunk correpsonds to seconds 0-5 in the video, the second temporal chunk correpsonds to seconds 5-10, etc.  
 
-annotation_id: Annotation ID for data point
+* annotation_id: Annotation ID for data point
 
-description: Description for a specific video segment
+* description: Description for a specific video segment
 
-video: Video ID
+* video: Video ID
 
-times: Ground truth time points marked by annotators.  There are four times corresponding to four different annotators.  For each time, the first number indicates the GIF in which the moment start, and the second number indicated the GIF in which the moment ends.  A time of [3,3] indicates that the moment started on second 3*5=15 and ended on moment (3+1)*5=20.
+* times: Ground truth time points marked by annotators.  The time points indicate which chunk includes the start of the moment and which chunk includes the end of the moment.  An annotation of (3,3) indicates that a moment starts at second 3*5=15 seconds and ends at second (3+1)*5=20 seconds.  An annotation of (1,4) indicates that a moment starts at second 1*5=5 seconds and ends at second (4+1)*5=20 seconds.
 
-download_link: A download link for the video
+* download_link: A download link for the video
 
-num_segments:  How many GIFs were shown to annotators.  Some videos are a little shorter than 25 seconds, so were split into five GIFs instead of six.
+* num_segments:  Some videos are a little shorter than 25 seconds, so were split into five GIFs instead of six.
 
 ### Getting the Videos
 
