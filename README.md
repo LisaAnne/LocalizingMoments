@@ -31,13 +31,13 @@ annotation_id: Annotation ID for data point
 
 description: Description for a specific video segment
 
-video: Video id
+video: Video ID
 
-times: Ground truth time points marked by annotators
+times: Ground truth time points marked by annotators.  There are four times corresponding to four different annotators.  For each time, the first number indicates the GIF in which the moment start, and the second number indicated the GIF in which the moment ends.  A time of [3,3] indicates that the moment started on second 3*5=15 and ended on moment (3+1)*5=20.
 
-download_link: a download link for the video
+download_link: A download link for the video
 
-num_segments:  how many GIFs were shown to annotators.  Some videos are a little shorter than 25 seconds, so were split into five GIFs instead of six.
+num_segments:  How many GIFs were shown to annotators.  Some videos are a little shorter than 25 seconds, so were split into five GIFs instead of six.
 
 ### Getting the Videos
 
