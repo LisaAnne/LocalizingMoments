@@ -1,5 +1,18 @@
 # LocalizingMoments
 
+Hendricks, Lisa Anne, et al. "Localizing Moments in Video with Natural Language." ICCV (2017).
+
+[Find the paper here.](https://arxiv.org/pdf/1708.01641.pdf)
+
+```
+@inproceedings{hendricks16cvpr, 
+        title = {Localizing Moments in Video with Natural Language.}, 
+        author = {Hendricks, Lisa Anne and Wang, Oliver and Shechtman, Eli and Sivic, Josef and Darrell, Trevor and Russell, Bryan}, 
+       booktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)}, 
+       year = {2017} 
+}
+```
+
 ## Running the Code
 
 To start, please run "./setup.sh". 
