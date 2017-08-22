@@ -6,7 +6,7 @@ Hendricks, Lisa Anne, et al. "Localizing Moments in Video with Natural Language.
 [Project webpage.](https://people.eecs.berkeley.edu/~lisa_anne/didemo.html)
 
 ```
-@inproceedings{hendricks16cvpr, 
+@inproceedings{hendricks17iccv, 
         title = {Localizing Moments in Video with Natural Language.}, 
         author = {Hendricks, Lisa Anne and Wang, Oliver and Shechtman, Eli and Sivic, Josef and Darrell, Trevor and Russell, Bryan}, 
        booktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)}, 
