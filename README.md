@@ -3,6 +3,7 @@
 Hendricks, Lisa Anne, et al. "Localizing Moments in Video with Natural Language." ICCV (2017).
 
 [Find the paper here.](https://arxiv.org/pdf/1708.01641.pdf)
+
 [Project webpage.](https://people.eecs.berkeley.edu/~lisa_anne/didemo.html)
 
 ```
