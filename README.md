@@ -33,7 +33,7 @@ To access the dataset, please look at the json files in the "data" folder.  Our 
 
 * video: Video ID
 
-* times: Ground truth time points marked by annotators.  The time points indicate which chunk includes the start of the moment and which chunk includes the end of the moment.  An annotation of (3,3) indicates that a moment starts at second 3*5=15 seconds and ends at second (3+1)*5=20 seconds.  An annotation of (1,4) indicates that a moment starts at second 1*5=5 seconds and ends at second (4+1)*5=20 seconds.
+* times: Ground truth time points marked by annotators.  The time points indicate which chunk includes the start of the moment and which chunk includes the end of the moment.  An annotation of (3,3) indicates that a moment starts at second 3x5=15 seconds and ends at second (3+1)x5=20 seconds.  An annotation of (1,4) indicates that a moment starts at second 1x5=5 seconds and ends at second (4+1)x5=20 seconds.
 
 * download_link: A download link for the video
 
