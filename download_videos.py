@@ -13,11 +13,15 @@ python download_videos.py  (without the download flag), will just check to see i
 
 import sys
 import os
-import python_tools
+import json
 import urllib
 import urllib2
 import argparse
 import pdb
+
+def read_json(t_file):
+  j_file = open(t_file).read()
+  return json.loads(j_file)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--video_directory", type=str, default='videos/', help="Indicate where you want downloaded videos to be stored")
@@ -27,9 +31,9 @@ args = parser.parse_args()
 if args.download:
     assert os.path.exists(args.video_directory)
 
-train_caps = python_tools.read_json('data/train_data.json')
-val_caps = python_tools.read_json('data/val_data.json')
-test_caps = python_tools.read_json('data/test_data.json')
+train_caps = read_json('data/train_data.json')
+val_caps = read_json('data/val_data.json')
+test_caps = read_json('data/test_data.json')
 
 all_data = train_caps + val_caps + test_caps
 
