@@ -1,6 +1,12 @@
 # LocalizingMoments
 
+## Running the Code
+
+To start, please run "./setup.sh". 
+
 ## Dataset
+
+### Annotations
 
 To access the dataset, please look at the json files in the "data" folder.  The json files contain a list of data points which are stored as dict structures with the following fields:
 	annotation_id: Annotation ID for data point
@@ -10,7 +16,7 @@ To access the dataset, please look at the json files in the "data" folder.  The 
         download_link: a download link for the video
         num_segments:  how many GIFs were shown to annotators.  Some videos are a little shorter than 25 seconds, so were split into five GIFs instead of six.
 
-## Downloading videos
+### Getting the Videos
 
 Use the script download_videos.py:
 python download_videos.py  --download --video_directory DIRECTORY
