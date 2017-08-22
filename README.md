@@ -27,17 +27,17 @@ I will release code to replicate my models shortly.  For now please see "eval.py
 
 To access the dataset, please look at the json files in the "data" folder.  The json files contain a list of data points which are stored as dict structures with the following fields:
 
-	annotation_id: Annotation ID for data point
+annotation_id: Annotation ID for data point
 
-        description: Description for a specific video segment
+description: Description for a specific video segment
 
- 	video: Video id
+video: Video id
 
-	times: Ground truth time points marked by annotators
+times: Ground truth time points marked by annotators
 
-        download_link: a download link for the video
+download_link: a download link for the video
 
-        num_segments:  how many GIFs were shown to annotators.  Some videos are a little shorter than 25 seconds, so were split into five GIFs instead of six.
+num_segments:  how many GIFs were shown to annotators.  Some videos are a little shorter than 25 seconds, so were split into five GIFs instead of six.
 
 ### Getting the Videos
 
