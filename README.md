@@ -17,7 +17,7 @@ License: BSD 2-Clause license
 
 ## Running the Code
 
-I will release code to replicate my models shortly.  For now please see "eval.py" 
+I will release code to replicate my models shortly.  For now please see "eval.py" for instructions on how to evaluate models.
 
 ## Dataset
 
