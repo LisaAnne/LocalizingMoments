@@ -27,16 +27,11 @@ I will release code to replicate my models shortly.  For now please see "eval.py
 
 To access the dataset, please look at the json files in the "data" folder.  Our annotations include descriptions which are temporally grounded in videos.  For easier annotation, each video is split into 5-second temporal chunks.  The first temporal chunk correpsonds to seconds 0-5 in the video, the second temporal chunk correpsonds to seconds 5-10, etc.  
 
-* annotation_id: Annotation ID for data point
-
+* annotation_id: Annotation ID for description
 * description: Description for a specific video segment
-
 * video: Video ID
-
 * times: Ground truth time points marked by annotators.  The time points indicate which chunk includes the start of the moment and which chunk includes the end of the moment.  An annotation of (3,3) indicates that a moment starts at second 3x5=15 seconds and ends at second (3+1)x5=20 seconds.  An annotation of (1,4) indicates that a moment starts at second 1x5=5 seconds and ends at second (4+1)x5=20 seconds.
-
 * download_link: A download link for the video
-
 * num_segments:  Some videos are a little shorter than 25 seconds, so were split into five GIFs instead of six.
 
 ### Getting the Videos
