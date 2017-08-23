@@ -8,8 +8,8 @@ Find the paper [here](https://arxiv.org/pdf/1708.01641.pdf) and the project page
 @inproceedings{hendricks17iccv, 
         title = {Localizing Moments in Video with Natural Language.}, 
         author = {Hendricks, Lisa Anne and Wang, Oliver and Shechtman, Eli and Sivic, Josef and Darrell, Trevor and Russell, Bryan}, 
-       booktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)}, 
-       year = {2017} 
+        booktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)}, 
+        year = {2017} 
 }
 ```
 
