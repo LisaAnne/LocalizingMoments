@@ -42,7 +42,7 @@ To access the dataset, please look at the json files in the "data" folder.  Our 
 ### Getting the Videos
 
 Use the script download_videos.py:
-python download_videos.py  --download --video_directory DIRECTORY
+`python download_videos.py  --download --video_directory DIRECTORY`
 
 There are some videos which have been removed from Flickr (~3% of the original videos).  You may access them at my website: https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/missing_videos/missing_videos.zip
 
