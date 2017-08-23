@@ -37,7 +37,7 @@ To access the dataset, please look at the json files in the "data" folder.  Our 
 Use the script download_videos.py:
 `python download_videos.py  --download --video_directory DIRECTORY`
 
-There are some videos which have been removed from Flickr (~3% of the original videos).  You may access them at my website: https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/missing_videos/missing_videos.zip
+There are some videos which have been removed from Flickr (~3% of the original videos).  You may access them [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/missing_videos/missing_videos.zip).
 
 Please contact me if you find more videos are missing.  I originally downloaded the videos provided in the YFCC100M dataset (10th entry for lines in "video_licenses.txt"), but many of these links no longer work.  The script I used to download the videos should work, but let me know if you run into any issues.  If you have a better understanding of the FlickrAPI (or are familiar with YFCC100M) and know why I can no longer download videos using the original download links, let me know.
 
