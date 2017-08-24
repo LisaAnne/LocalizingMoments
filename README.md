@@ -41,4 +41,4 @@ There are some videos which have been removed from Flickr (~3% of the original v
 
 Please contact me if you find more videos are missing.  I originally downloaded the videos provided in the YFCC100M dataset (2nd entry for lines in "video_licenses.txt"), but many of these links no longer work.  The script I used to download the videos should work, but let me know if you run into any issues.  If you have a better understanding of the FlickrAPI (or are familiar with YFCC100M) and know why I can no longer download videos using the original download links, let me know.
 
-You can view the Creative Commons licenses and all metadata in "video_licenses.txt".
+You can view the Creative Commons licenses in "video_licenses.txt".
