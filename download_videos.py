@@ -18,10 +18,7 @@ import urllib
 import urllib2
 import argparse
 import pdb
-
-def read_json(t_file):
-  j_file = open(t_file).read()
-  return json.loads(j_file)
+from utils import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--video_directory", type=str, default='videos/', help="Indicate where you want downloaded videos to be stored")
