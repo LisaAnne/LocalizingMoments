@@ -7,8 +7,8 @@ python download_videos.py  --download --video_directory DIRECTORY
 
 will download videos from flickr to DIRECTORY
 
-python download_videos.py  (without the download flag), will just check to see if a video is still on the flickr.  As of 08/20/2017, 316 of the origianl >10,000 videos have been removed from Flickr.  I will place these on my website shortly (as well as pre-extracted features).
-
+python download_videos.py  (without the download flag), will just check to see if a video is still on flickr.  
+As of 08/20/2017, 316 of the original >10,000 videos have been removed from Flickr.
 '''
 
 import sys
