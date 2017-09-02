@@ -45,7 +45,7 @@ for dl_link, video_name in zip(link_dict.keys(), link_dict.values()):
     if args.download:
         try:
             response = urllib2.urlopen(dl_link)
-            urllib.urlretrieve(dl_link, '%s/%s' %(args.video_directory, video_name))
+            urllib.urlretrieve(response.geturl(), '%s/%s' %(args.video_directory, video_name))
         except:
             print "Could not download link: %s\n" %dl_link
     else:
