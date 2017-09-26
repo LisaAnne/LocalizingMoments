@@ -40,7 +40,7 @@ for d in all_data:
 
 count = 0
 missing_videos_list = []
-for dl_link, video_name in zip(link_dict.keys()[:50], link_dict.values()[:50]):
+for dl_link, video_name in zip(link_dict.keys(), link_dict.values()):
     sys.stdout.write('\rDownlaoding video: %d/%d' %(count, len(link_dict.keys())))
     if args.download:
         try:
