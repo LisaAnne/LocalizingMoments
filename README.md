@@ -19,6 +19,14 @@ License: BSD 2-Clause license
 
 I will release code to replicate my models shortly.  For now please see "eval.py" for instructions on how to evaluate models.
 
+You can access my deploy prototxt and models [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/models/).  I have deploy prototxts/models for both RGB and flow inputs.  
+The inputs to the models are: 
+
+* image_data: pre-extracted features from either rgb or flow (see below for links to pre-extracted features)
+* loc_data: start and end points for video moments (normalized by video length)
+* text_data: glove embeddings for words in a sentence.  If a word is not in glove, it is represented as a zero vector.  The input is TxNx300 where T is the max number of words in a query (I use 50) and N is the batch size.  300 is the size of the Glove embedding.  If a sentene is of length M < N, then the last N entries include Glove embeddings for words in the sentences.
+* cont_data: Indicates when the sentence begins. 
+
 ## Dataset
 
 ### Annotations
@@ -42,3 +50,7 @@ There are some videos which have been removed from Flickr (~3% of the original v
 Please contact me if you find more videos are missing.  I originally downloaded the videos provided in the YFCC100M dataset (2nd entry for lines in "video_licenses.txt"), but many of these links no longer work.  The script I used to download the videos should work, but let me know if you run into any issues.  If you have a better understanding of the FlickrAPI (or are familiar with YFCC100M) and know why I can no longer download videos using the original download links, let me know.
 
 You can view the Creative Commons licenses in "video_licenses.txt".
+
+### Pre-Extracted Features
+
+You can access preextracted features for RGB [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/average_fc7.h5) and for flow [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/average_global_flow.h5).
