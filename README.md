@@ -17,7 +17,7 @@ License: BSD 2-Clause license
 
 ## Running the Code
 
-I will release code to replicate my models shortly.  For now please see "eval.py" for instructions on how to evaluate models.
+I will release code to build and test my models shortly.  For now please see "eval.py" for instructions on how to evaluate models.
 
 You can access my deploy prototxt and models [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/models/).  I have deploy prototxts/models for both RGB and flow inputs.  
 The inputs to the models are: 
