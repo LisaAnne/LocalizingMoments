@@ -24,8 +24,8 @@ The inputs to the models are:
 
 * image_data: pre-extracted features from either rgb or flow (see below for links to pre-extracted features)
 * loc_data: start and end points for video moments (normalized by video length)
-* text_data: glove embeddings for words in a sentence.  If a word is not in glove, it is represented as a zero vector.  The input is TxNx300 where T is the max number of words in a query (I use 50) and N is the batch size.  300 is the size of the Glove embedding.  If a sentene is of length M < N, then the last N entries include Glove embeddings for words in the sentences.
-* cont_data: Indicates when the sentence begins. 
+* text_data: glove embeddings for words in a sentence.  If a word is not in glove, it is represented as a zero vector.  The input is TxNx300 where T is the max number of words in a query (I use 50) and N is the batch size.  300 is the size of the Glove embedding.  If a sentene is of length t < T, then the last t entries include Glove embeddings for words in the sentences.
+* cont_data: TxN matrix which indicates when sentences begin where T is max sentence length and N is batch size.  If sentence n is of length t, cont_data[:-(t-1), n] = 1 and cont_data[:(t+1), n] = 0.  Caffe can only handle fixed length sequences, so the cont_data input provides a way to flush the LSTM cell when a sentence begins.
 
 ## Dataset
 
