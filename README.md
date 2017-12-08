@@ -42,12 +42,18 @@ To access the dataset, please look at the json files in the "data" folder.  Our 
 
 ### Getting the Videos
 
+1.  Download videos from AWS (preferred method).  YFCC100M images and videos are stored on AWS [here](https://multimedia-commons.s3-us-west-2.amazonaws.com/data/videos/mp4/).  Because many videos have been deleted off of Flickr since I collected the dataset, it is best to access the videos stored on AWS instead of trying to download directly from Flickr.  To download the videos used in my dataset use the script download_videos_AWS.py:
+
+`python download_videos_AWS.py --download --video_directory DIRECTORY`
+
+There are 13 videos which are not on AWS which you may download from my website [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/missing_videos/missing_videos_AWS.zip) (I don't have enough space to store all the videos on my website -- Sorry!)
+
+2.  Download videos directly from Flickr.  This is what I did when collecting the dataset, but now many Flickr videos have been deleted and many people have had issues running my download script.  To download videos directly from Flickr:
+
 Use the script download_videos.py:
 `python download_videos.py  --download --video_directory DIRECTORY`
 
-There are some videos which have been removed from Flickr (~3% of the original videos).  You may access them [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/missing_videos/missing_videos.zip).
-
-Please contact me if you find more videos are missing.  I originally downloaded the videos provided in the YFCC100M dataset (2nd entry for lines in "video_licenses.txt"), but many of these links no longer work.  The script I used to download the videos should work, but let me know if you run into any issues.  If you have a better understanding of the FlickrAPI (or are familiar with YFCC100M) and know why I can no longer download videos using the original download links, let me know.
+When I originally released the dataset, ~3% of the original videos had been deleted from Flickr.  You may access them [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/missing_videos/missing_videos.zip).  If you find that more videos are missing, please download the videos via the AWS links above.
 
 You can view the Creative Commons licenses in "video_licenses.txt".
 
