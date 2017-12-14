@@ -19,8 +19,6 @@ def eval_predictions(segments, data):
 	segments: For each item in the ground truth data, rank possible video segments given the description and video.  In DiDeMo, there are 21 posible moments extracted for each video so the list of video segments will be of length 21.  The first video segment should be the video segment that best corresponds to the text query.  There are 4180 sentence in the validation data, so when evaluating a model on the val dataset, segments should be a list of lenght 4180, and each item in segments should be a list of length 21. 
 	data: ground truth data
     '''
-    import pdb
-    pdb.set_trace()
     average_ranks = []
     average_iou = []
     for s, d in zip(segments, data):
