@@ -8,7 +8,7 @@ python test_network.py --deploy_net prototxts/deploy_clip_retrieval_rgb_iccv_rel
                        --max_iter 30000 \
                        --snapshot_interval 30000 \
                        --loc \
-                       --test_h5 data/rgb_fc7.h5 \
+                       --test_h5 data/average_fc7.h5 \
                        --split val \
 
 echo "Flow model on val..."
