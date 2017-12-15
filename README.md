@@ -17,15 +17,16 @@ License: BSD 2-Clause license
 
 ## Running the Code
 
-I will release code to build and test my models shortly.  For now please see "eval.py" for instructions on how to evaluate models.
+Right now I have released evaluation code so you can evaluate my released models.  By 12/25/2017 I hope to have the train code released.
 
-You can access my deploy prototxt and models [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/models/).  I have deploy prototxts/models for both RGB and flow inputs.  
-The inputs to the models are: 
+**Preliminaries**:  I trained all my models with the [BVLC caffe version](https://github.com/BVLC/caffe).  Before you start, look at "utils/config.py" and change any paths as needed (e.g., perhaps you want to point to a Caffe build in a different folder).
 
-* image_data: pre-extracted features from either rgb or flow (see below for links to pre-extracted features)
-* loc_data: start and end points for video moments (normalized by video length)
-* text_data: glove embeddings for words in a sentence.  If a word is not in glove, it is represented as a zero vector.  The input is TxNx300 where T is the max number of words in a query (I use 50) and N is the batch size.  300 is the size of the Glove embedding.  If a sentene is of length t < T, then the last t entries include Glove embeddings for words in the sentences.
-* cont_data: TxN matrix which indicates when sentences begin where T is max sentence length and N is batch size.  If sentence n is of length t, cont_data[:-(t-1), n] = 1 and cont_data[:(t+1), n] = 0.  Caffe can only handle fixed length sequences, so the cont_data input provides a way to flush the LSTM cell when a sentence begins.
+**Evaluation**
+
+Look at "utils/eval.py" if you would like to train a model that you have trained.  Below are instructions to eval the models I proposed in my paper:
+
+* Download data/models with "download/get_models.sh".  This should download models I trained and pre-extracted features.  Note that I retrained my models before releasing and the numbers are slightly different than those reported in the paper.
+* Run "test_network.sh".  This will run both RGB and flow models on the val and test sets.  It will also produce the scorse for the fusion model.  
 
 ## Dataset
 
@@ -59,4 +60,8 @@ You can view the Creative Commons licenses in "video_licenses.txt".
 
 ### Pre-Extracted Features
 
-You can access preextracted features for RGB [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/average_fc7.h5) and for flow [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/average_global_flow.h5).
+You can access preextracted features for RGB [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/average_fc7.h5) and for flow [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/average_global_flow.h5).  These are automatically downloaded in "download/get_models.sh".
+
+### Other work using DiDeMo
+
+DiDeMo is a new dataset, so as of yet I am not aware of any other published results using the dataset.  However, if you have done something cool with this dataset, please email me and I will share a link to your work here!
