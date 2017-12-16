@@ -187,9 +187,9 @@ def feature_process_context(start, end, features):
   feature_dim = features.shape[1]
   full_feature = np.zeros((feature_dim*2,))
   if np.sum(features[5,:]) > 0:
-    full_feature[:feature_dim] = feature_process_norm(0,6, features) 
-  else:
     full_feature[:feature_dim] = feature_process_norm(0,5, features) 
+  else:
+    full_feature[:feature_dim] = feature_process_norm(0,4, features) 
   full_feature[feature_dim:feature_dim*2] = feature_process_norm(start, end, features) 
 
   return full_feature
