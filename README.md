@@ -17,8 +17,6 @@ License: BSD 2-Clause license
 
 ## Running the Code
 
-Right now I have released evaluation code so you can evaluate my released models.  By 12/25/2017 I hope to have the train code released.
-
 **Preliminaries**:  I trained all my models with the [BVLC caffe version](https://github.com/BVLC/caffe).  Before you start, look at "utils/config.py" and change any paths as needed (e.g., perhaps you want to point to a Caffe build in a different folder).
 
 **Evaluation**
@@ -27,6 +25,10 @@ Look at "utils/eval.py" if you would like to train a model that you have trained
 
 * Download data/models with "download/get_models.sh".  This should download models I trained and pre-extracted features.  Note that I retrained my models before releasing and the numbers are slightly different than those reported in the paper.
 * Run "test_network.sh".  This will run both RGB and flow models on the val and test sets.  It will also produce the scorse for the fusion model.  
+
+**Training**
+
+Use "run_job_rgb.sh" to train an RGB model and "run_job_flow.sh" to train a flow model.  You should be able to rerun these scripts and get simiar numbers to those reported in the paper.
 
 ## Dataset
 
