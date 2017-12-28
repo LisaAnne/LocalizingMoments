@@ -34,8 +34,8 @@ python build_net.py --feature_process_visual feature_process_context  \
                     --snapshot 10000 \
                     --stepsize 10000 \
                     --base_lr 0.05 \
-                    --train_h5 /home/lisaanne/projects/LocalizingMoments/data/average_global_flow.h5 \
-                    --test_h5 /home/lisaanne/projects/LocalizingMoments/data/average_global_flow.h5 \
+                    --train_h5 data/average_global_flow.h5 \
+                    --test_h5 data/average_global_flow.h5 \
                     --train_json data/train_data.json \
                     --test_json data/val_data.json \
                     --random_seed 1701 \
