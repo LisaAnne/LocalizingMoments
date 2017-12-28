@@ -2,9 +2,8 @@ import numpy as np
 import sys
 import os
 sys.path.append('utils/')
-if not os.path.exists('utils/config.py'):
-    print "Please see README and create utils/config.py file"
 from config import *
+from utils import *
 sys.path.append(pycaffe_dir)
 import time
 import pdb
@@ -21,7 +20,7 @@ import re
 
 glove_dim = 300
 glove_path = 'data/glove.6B.%dd.txt' %glove_dim
-#glove_path = 'data/glove_debug_path.txt'
+#glove_path = 'data/glove_debug_path.txt' #for debugging
 
 if glove_path == 'data/glove_debug_path.txt':
     print "continue?"
@@ -90,27 +89,30 @@ class recurrent_language(object):
 
   def get_vocab_size(self):
     return len(self.vocab_dict.keys()) 
+
+  def preprocess_sentence(self, words):
+    vector_dim = self.get_vector_dim()
+    sentence_mat = np.zeros((len(words), vector_dim))
+    count_words = 0
+    for i, w in enumerate(words):
+      try:
+        sentence_mat[count_words,:] = self.vocab_dict[w]
+        count_words += 1
+      except:
+        if '<unk>' in self.vocab_dict.keys():
+          sentence_mat[count_words,:] = self.vocab_dict['<unk>'] 
+          count_words += 1
+        else:
+          pass
+    sentence_mat = sentence_mat[:count_words] 
+    return sentence_mat
     
   def preprocess(self, data):
 
-    vector_dim = self.get_vector_dim()
     
     for d in data:
       words = sentences_to_words([d['description']])
-      sentence_mat = np.zeros((len(words), vector_dim))
-      count_words = 0
-      for i, w in enumerate(words):
-        try:
-          sentence_mat[count_words,:] = self.vocab_dict[w]
-          count_words += 1
-        except:
-          if '<unk>' in self.vocab_dict.keys():
-            sentence_mat[count_words,:] = self.vocab_dict['<unk>'] 
-            count_words += 1
-          else:
-            pass
-      sentence_mat = sentence_mat[:count_words] 
-      d['language_input'] = sentence_mat
+      d['language_input'] = self.preprocess(words)
     return data
 
 class recurrent_word(recurrent_language):
@@ -355,13 +357,9 @@ class extractVisualFeatures(extractData):
     features_time_stamp_n = np.zeros((self.batch_size, 2))
 
     for i, nb in enumerate(next_batch):
-        if isinstance(data[nb]['gt'][0], int):
-            gt_s = data[nb]['gt'][0]
-            gt_e = data[nb]['gt'][1]
-        else:
-            rint = random.randint(0,len(data[nb]['gt'])-1)
-            gt_s = data[nb]['gt'][rint][0]
-            gt_e = data[nb]['gt'][rint][1]
+        rint = random.randint(0,len(data[nb]['times'])-1)
+        gt_s = data[nb]['times'][rint][0]
+        gt_e = data[nb]['times'][rint][1]
         possible_n = list(set(self.possible_annotations) - set(((gt_s,gt_e),))) 
         random.shuffle(possible_n)
         n = possible_n[0]
@@ -511,12 +509,6 @@ class dataLayer_ExtractPairedLanguageVision(python_data_layer):
     self.params['feature_time_stamp_p'] = 'features_time_stamp_p'
     self.params['feature_time_stamp_n'] = 'features_time_stamp_n'
     self.params['cont_key'] = 'cont'
-
-    language_feature_process_dict = {'BoW': bow_vector,
-                                     'average_glove': average_glove_vector,
-                                     'zero_language': zero_language_vector,
-                                     'recurrent_word': recurrent_word,
-                                     'recurrent_embedding': recurrent_embedding }
 
     language_extractor_fcn = extractLanguageFeatures
     visual_extractor_fcn = extractVisualFeatures
