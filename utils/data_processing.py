@@ -255,7 +255,7 @@ class extractLanguageFeatures(extractData):
         feature[-(len_query)+count_word,:] = self.vocab_dict[word] 
       except:
         feature[-(len_query)+count_word,:] = np.zeros((glove_dim,))
-    cont[-(len_query-1):] = 1 
+    cont[-(len_query):] = 1 
     assert np.sum(feature[:-len_query,:]) == 0
 
     return feature, cont
