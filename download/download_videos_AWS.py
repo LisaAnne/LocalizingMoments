@@ -9,12 +9,13 @@ will download videos from flickr to DIRECTORY
 
 python download_videos_AWS.py  
 '''
-from utils import *
+import sys
+sys.path.append('.')
+from utils.utils import *
 import urllib
 import urllib2
 import pdb
 import argparse
-import sys
 import os
 
 parser = argparse.ArgumentParser()
@@ -55,6 +56,7 @@ for video_count, video in enumerate(videos):
      sys.stdout.write('\rDownloading video: %d/%d' %(video_count, len(videos)))
      video_id = video.split('_')[1]
      link = get_aws_link(yfcc100m_hash[video_id])
+     import pdb; pdb.set_trace()
      if args.download:
         try:
             response = urllib2.urlopen(link)
