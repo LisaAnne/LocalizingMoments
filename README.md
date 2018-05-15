@@ -24,7 +24,7 @@ License: BSD 2-Clause license
 Look at "utils/eval.py" if you would like to evaluate a model that you have trained.  Below are instructions to eval the models I proposed in my paper:
 
 * Download data/models with "download/get_models.sh".  This should download models I trained and pre-extracted features.  Note that I retrained my models before releasing and the numbers are slightly different than those reported in the paper.
-* Run "test_network.sh".  This will run both RGB and flow models on the val and test sets.  It will also produce the scorse for the fusion model.  
+* Run "test_network.sh".  This will run both RGB and flow models on the val and test sets.  It will also produce the scores for the fusion model.  
 
 **Training**
 
