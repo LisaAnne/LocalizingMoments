@@ -21,10 +21,21 @@ License: BSD 2-Clause license
 
 **Evaluation**
 
-Look at "utils/eval.py" if you would like to evaluate a model that you have trained.  Below are instructions to eval the models I proposed in my paper:
+Look at "utils/eval.py" if you would like to train a model that you have trained.  Below are instructions to eval the models I proposed in my paper:
 
 * Download data/models with "download/get_models.sh".  This should download models I trained and pre-extracted features.  Note that I retrained my models before releasing and the numbers are slightly different than those reported in the paper.
-* Run "test_network.sh".  This will run both RGB and flow models on the val and test sets.  It will also produce the scores for the fusion model.  
+* Run "test_network.sh".  This will run both RGB and flow models on the val and test sets.  It will also produce the scorse for the fusion model.  
+
+You should get the following outputs:
+
+| | Rank@1 | Rank@5 | mIOU |
+| --- | --- | --- | --- |
+| RGB val | 0.2442 | 0.7540 | 0.3739 |
+| Flow val | 0.2626 | 0.7839 | 0.4015 |
+| Fusion val (lambda 0.5) | 0.2765 | 0.7961 | 0.4191 |
+| RGB test | 0.2312 | 0.7336 | 0.3549 |
+| Flow test | 0.2583 | 0.7540 | 0.3894 |
+| Fusion test (lambda 0.5) | 0.2708 | 0.7853 | 0.4053 |
 
 **Training**
 
@@ -66,4 +77,4 @@ You can access preextracted features for RGB [here](https://people.eecs.berkeley
 
 ### Other work using DiDeMo
 
-[Text-to-Clip Video Retrieval with Early Fusion and Re-Captioning](https://arxiv.org/pdf/1804.05113.pdf)
+DiDeMo is a new dataset, so as of yet I am not aware of any other published results using the dataset.  However, if you have done something cool with this dataset, please email me and I will share a link to your work here!
