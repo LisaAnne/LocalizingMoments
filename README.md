@@ -66,4 +66,4 @@ You can access preextracted features for RGB [here](https://people.eecs.berkeley
 
 ### Other work using DiDeMo
 
-DiDeMo is a new dataset, so as of yet I am not aware of any other published results using the dataset.  However, if you have done something cool with this dataset, please email me and I will share a link to your work here!
+[Text-to-Clip Video Retrieval with Early Fusion and Re-Captioning](https://arxiv.org/pdf/1804.05113.pdf)
