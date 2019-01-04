@@ -74,7 +74,3 @@ You can view the Creative Commons licenses in "video_licenses.txt".
 ### Pre-Extracted Features
 
 You can access preextracted features for RGB [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/average_fc7.h5) and for flow [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/average_global_flow.h5).  These are automatically downloaded in "download/get_models.sh".  To extract flow, I used the code [here](https://github.com/wanglimin/dense_flow).
-
-### Other work using DiDeMo
-
-[Text-to-Clip Video Retrieval with Early Fusion and Re-Captioning](https://arxiv.org/pdf/1804.05113.pdf)
