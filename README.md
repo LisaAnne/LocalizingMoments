@@ -76,3 +76,5 @@ You can view the Creative Commons licenses in "video_licenses.txt".
 ### Pre-Extracted Features
 
 You can access preextracted features for RGB [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/average_fc7.h5) and for flow [here](https://people.eecs.berkeley.edu/~lisa_anne/didemo/data/average_global_flow.h5).  These are automatically downloaded in "download/get_models.sh".  To extract flow, I used the code [here](https://github.com/wanglimin/dense_flow).
+
+I provide re-extracted features in the Google Drive above.  You can use [this script](https://github.com/LisaAnne/LocalizingMoments/blob/master/make_average_video_dict.py) to create a dict with averaged RGB features and [this script](https://github.com/LisaAnne/LocalizingMoments/blob/master/make_average_video_dict_flow.py).  The average features will be a bit different than the original release, but did not influence any trends in the results.
